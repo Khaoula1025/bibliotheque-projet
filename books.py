@@ -2,6 +2,7 @@ import data
 
 livres = data.livres
 aime_livres = data.aime_livres
+users = data.utilisateurs
 
 #q1
 def sort_func(x):
@@ -71,4 +72,11 @@ def recherche_par_livre(livres):
             return i
         else:
             return '\nce livre n\'existe pas !!!\n'
+
+def pair_name_age(users):
+    nom_age = []
+    for u in users:
+        nom_age.append(tuple([u[1],u[-1]]))
+    nom_age.sort(key=lambda x: x[1])
+    return nom_age
 
