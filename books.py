@@ -1,6 +1,7 @@
 import data
 
 livres = data.livres
+aime_livres = data.aime_livres
 
 #q1
 def sort_func(x):
@@ -21,11 +22,15 @@ def plus_recent(livres):
 
 #q3
 
-new_dict ={ "1984": 2, "Le Petit Prince": 1, "Harry Potter": 1 } 
-
-def addNewBook(livres):
-    livres.append(new_dict)
-    return livres
+def count_likes(aime_livres):
+    dict_result = {}
+    for i in aime_livres:
+        count = 0
+        for j in aime_livres:
+            if i[1] == j[1]:
+                count +=1
+        dict_result[i[1]] = count
+    return dict_result
 
 
 def show_2_by_2(livres):
@@ -34,12 +39,15 @@ def show_2_by_2(livres):
     fin = 2
     while True:
             print(f'livre de {debut} a {fin}\n')
+            
             for i in range(debut , fin):
-                
                 print((triage_livre(livres))[i])
+                
             print('\ntaper \'>\' pour passer au deux livre suivant ')
             print('taper autre chose pour quitter ')
+            
             choix = input('votre choix : ')
+            
             if choix.strip() == '>':
                 debut +=2
                 fin +=1
@@ -53,3 +61,14 @@ def show_2_by_2(livres):
             else:
                 break
             
+
+# bonus 
+
+def recherche_par_livre(livres):
+    livre = input('donner le nom du livre souhaite : ')
+    for i in livres:
+        if livre in list(i.items())[0]:
+            return i
+        else:
+            return '\nce livre n\'existe pas !!!\n'
+
