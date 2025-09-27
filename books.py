@@ -34,7 +34,7 @@ def count_likes(aime_livres):
     return dict_result
 
 
-def show_2_by_2(livres):
+def show_2_by_2(users):
     choix = '>'
     debut = 0
     fin = 2
@@ -42,7 +42,7 @@ def show_2_by_2(livres):
             print(f'livre de {debut} a {fin}\n')
             
             for i in range(debut , fin):
-                print((triage_livre(livres))[i])
+                print(users[i])
                 
             print('\ntaper \'>\' pour passer au deux livre suivant ')
             print('taper autre chose pour quitter ')

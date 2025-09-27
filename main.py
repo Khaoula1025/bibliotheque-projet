@@ -8,8 +8,8 @@ aime_livres = data.aime_livres
 # books
 
 print(books.count_likes(aime_livres))
-# books.show_2_by_2(livres)
-# print(books.recherche_par_livre(livres))
+books.show_2_by_2(users)
+print(books.recherche_par_livre(livres))
 
 # users
 
